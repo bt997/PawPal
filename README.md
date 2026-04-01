@@ -22,6 +22,37 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
+## Features
+
+### Task Management
+- Add tasks with a name, duration, priority (high / medium / low), frequency (daily, weekly, as-needed), and a scheduled start time in HH:MM format
+- Filter the task list by completion status or pet name
+- Tasks are displayed sorted chronologically by start time
+
+### Smart Scheduling
+- Generates a daily plan using a greedy algorithm that respects a configurable time budget
+- Tasks are prioritized high → medium → low, with start time used as a tiebreaker within each tier
+- Skipped tasks (not enough time) are shown in a collapsible section
+
+### Recurring Tasks
+- Completing a daily task automatically creates a new instance due the following day
+- Completing a weekly task schedules the next occurrence seven days out
+- As-needed tasks are marked complete without spawning a follow-up
+
+### Conflict Detection
+- Detects overlapping time windows across all scheduled tasks (same-pet or cross-pet)
+- Surfaces each conflict as a warning in the UI without crashing the app
+- Back-to-back tasks that share only a boundary are not flagged
+
+### Streamlit UI
+- Owner and pet setup with time budget input
+- Live task table with status, due date, and priority columns
+- Schedule view with time usage summary, conflict warnings, and pet care reminders
+
+### Tests
+- 16 pytest tests covering sorting correctness, recurring task logic, and conflict detection edge cases
+- Run with: `python -m pytest tests/test_pawpal.py -v`
+
 ## Getting started
 
 ### Setup

@@ -24,7 +24,7 @@ Finally there is the Scheduler class that holds an Owner, task list and time lim
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
-No the design didn't change during implementation.
+Yes the design changed based on the spec. A spawn_next method was added to Task because when a daily task is completed, a new task for the following days should be added.
 
 ---
 
@@ -95,10 +95,16 @@ Another edge case to test would be completing a task with no due_date set.
 
 - What part of this project are you most satisfied with?
 
+I was most satisfied with the conflict handling between different tasks.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+I would make the frontend more colorful. Right now it's kind of boring.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+The st.session_state was an interesting thing I learned and I didn't know that streamlit was stateless until I worked on this project.
