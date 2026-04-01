@@ -53,7 +53,7 @@ A tradeoff that the scheduler makes is in prioritizing higher priority tasks ove
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
-I asked the AI to plan first and then explain the plan before 
+I asked the AI to plan first and then explain the plan before implementing it.
 
 **b. Judgment and verification**
 
@@ -65,16 +65,27 @@ The AI didn't have a relationship between Owner and Pet in the UML diagram. I ve
 ---
 
 ## 4. Testing and Verification
+## Testing PawPal+
+The command to run tests is:
+python -m pytest tests/test_pawpal.py
 
 **a. What you tested**
 
 - What behaviors did you test?
 - Why were these tests important?
 
+The behaviors tested were that tasks were sorted into correct chronological order that completing a daily or weekly task automatically creates the next occurrence with the right due date, and that the conflict detector flags overlapping time windows without false positives on back-to-back tasks. 
+
+These tests were important because those behaviors can cause errors that aren't detected.
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+On a scale of 1-5, I would say my confidence level is a 4.
+
+Another edge case to test would be completing a task with no due_date set.
 
 ---
 
